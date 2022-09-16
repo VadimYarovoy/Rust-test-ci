@@ -1,6 +1,6 @@
 fn main() {
     println!("{}", value_in_rubbles(Coin::Rubble))
-
+}
 
 enum Coin{
     Rubble,
