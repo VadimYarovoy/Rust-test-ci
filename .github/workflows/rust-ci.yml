@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: table
+      #  with:
+      #    toolchain: table
       #- name: build
        # uses: actions-rs/cargo@v1
        # with:
@@ -31,6 +31,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
   
   test:
+    needs: [lint] 
+  
     runs-on: ubuntu-latest
     
     steps:
