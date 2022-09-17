@@ -58,18 +58,15 @@ jobs:
   
   test:
     needs: [check, fmt, clippy] 
-  
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v3
       - name: Run tests
         run: cargo test --verbose 
+        
   build:
     needs: [test]
-    
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Build
